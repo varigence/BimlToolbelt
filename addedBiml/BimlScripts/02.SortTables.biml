@@ -1,0 +1,18 @@
+﻿<Biml xmlns="http://schemas.varigence.com/biml.xsd">
+	<Packages>
+		<Package Name="Create Tables">
+			<Tasks>
+				<ExecuteSQL Name="Deploy All" ConnectionName="Source">
+					<DirectInput>
+					<# foreach (var table in RootNode.Tables.TopoSort()) { #>
+					<#=table.GetDropAndCreateDdl() #>
+					<# } #> 
+                    </DirectInput>
+				</ExecuteSQL>
+            </Tasks>
+        </Package>
+    </Packages>
+	
+</Biml>
+
+<#@ code file="..\Code\02.DependencyAnalysis.cs" #>

@@ -1,0 +1,8 @@
+﻿<#* This is best implemented as a transformer, but here is a live script in case you have to use BimlExpress *#>
+
+<# GuidManager.GuidFilePath = Path.Combine(Path.GetDirectoryName(Host.TemplateFile), "GuidCache.txt"); #>
+<# foreach (var taskNode in RootNode.AllDefinedSuccessors().OfType<AstTaskNode>()) { taskNode.Id = GuidManager.GetId(taskNode); } #>
+
+<#@ template tier="999999" #>
+<#@ code file="..\Code\GuidManager.cs" #> 
+<#@ import namespace="System.IO" #>

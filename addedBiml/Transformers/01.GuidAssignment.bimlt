@@ -1,0 +1,6 @@
+﻿<#@ target type="Task" mergemode="LocalMerge" #>
+<# GuidManager.GuidFilePath = Path.Combine(Path.GetDirectoryName(Host.TemplateFile), "GuidCache.txt"); #>
+<Task Id="<#=GuidManager.GetId(TargetNode)#>" />
+
+<#@ code file="..\Code\GuidManager.cs" #>
+<#@ import namespace="System.IO" #>
