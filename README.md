@@ -1,3 +1,3 @@
-# Biml Debug Utilities
+# Biml Toolbelt
 
-This project contains helper methods that will expose the contents of Biml API objects to the Biml editor preview window and logging methods. While not a replacement for an interactive debugger, it will help find, diagnose, and fix issues with your BimlScripts.
+This project contains helper BimlScript and code files that assist with common teaks in Biml development, such as table dependency analysis, SSIS GUID caching and debugging.
